@@ -9,3 +9,4 @@ C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tab
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\bin\Debug\Banguat_TableGeneration.pdb
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\obj\Debug\Banguat_TableGeneration.exe
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\obj\Debug\Banguat_TableGeneration.pdb
+C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\obj\Debug\Banguat_TableGeneration.csprojResolveAssemblyReference.cache
