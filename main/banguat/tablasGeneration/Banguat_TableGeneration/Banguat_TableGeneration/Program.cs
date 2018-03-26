@@ -12,7 +12,7 @@ namespace Banguat_TableGeneration
     {
         public static string inputPathFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\inputs_txt";
 
-        public static string outputPathFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\outputs";
+        public static string outputPathFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\outputs_tables";
 
         public static List<string> years = new List<string> { "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016" };
 
@@ -61,7 +61,7 @@ namespace Banguat_TableGeneration
 
         public static void SaveToFile(Variable variable, string resultPathFolder, string operationType)
         {
-            string outPutFileName = resultPathFolder + "\\" + variable.name + " - " + operationType + ".txt";
+            string outPutFileName = resultPathFolder + "\\" + variable.name + " - " + operationType + ".csv";
 
             string fileContents = GenerateFileContents(variable, operationType);
 
@@ -203,7 +203,7 @@ namespace Banguat_TableGeneration
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-                    List<string> values = line.Split(',').ToList();
+                    List<string> values = line.Split('\t').ToList();
 
 
                     string importacionesLabel = "IMPORTACIONES";
