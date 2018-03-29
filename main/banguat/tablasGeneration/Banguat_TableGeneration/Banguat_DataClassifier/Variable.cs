@@ -10,16 +10,16 @@ namespace Banguat_DataClassifier
 {
     class Variable
     {
-        string name;
+        string name = "";
 
         public string[,] imports = new string[16, 12];
         public string[,] exports = new string[16, 12];
 
         public bool[] yearFlags = new bool[] { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
 
-        public Variable()
+        public Variable(string name)
         {
-            
+            this.name = name;
         }
         
         public void FillData(string year, string[] data, string[] headers)
@@ -36,13 +36,13 @@ namespace Banguat_DataClassifier
 
                 int column = Banguat_DataClassifier.Util.GetMonthBasedOnColumnNumber(i);
 
-                FillRows(row, column, headerName, value);
+                fillRows(row, column, headerName, value);
             }
 
             yearFlags[row] = true;
         }
 
-        public void FillRows(int row, int column, string type, string value)
+        private void fillRows(int row, int column, string type, string value)
         {
             if(type== "Importaciones")
             {
