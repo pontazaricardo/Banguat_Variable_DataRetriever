@@ -22,6 +22,12 @@ namespace Banguat_DataClassifier
             this.name = name;
         }
         
+        /// <summary>
+        /// Given the data of an specific year, it fills the respective matrix.
+        /// </summary>
+        /// <param name="year"></param>
+        /// <param name="data"></param>
+        /// <param name="headers"></param>
         public void FillData(string year, string[] data, string[] headers)
         {
             int row = Banguat_DataClassifier.Util.positionsInArray[year];
@@ -42,6 +48,13 @@ namespace Banguat_DataClassifier
             yearFlags[row] = true;
         }
 
+        /// <summary>
+        /// Given a row and a column, it determines the type of operation and assigns the value to the correct matrix.
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
+        /// <param name="type"></param>
+        /// <param name="value"></param>
         private void fillRows(int row, int column, string type, string value)
         {
             if(type== "Importaciones")
