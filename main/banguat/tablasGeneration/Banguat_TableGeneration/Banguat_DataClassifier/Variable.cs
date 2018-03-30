@@ -28,9 +28,9 @@ namespace Banguat_DataClassifier
         /// <param name="year"></param>
         /// <param name="data"></param>
         /// <param name="headers"></param>
-        public void FillData(string year, string[] data, string[] headers)
+        public void FillData(int year, string[] data, string[] headers)
         {
-            int row = Banguat_DataClassifier.Util.positionsInArray[year];
+            int row = Banguat_DataClassifier.Util.positionsInArray[Convert.ToString(year)];
 
             if ((data.Count() != 27) || (headers.Count()!=27))//There must be 27 columns
                 throw new System.ArgumentException("Variable " + name + " - " + year + " does not contain 27 columns. Check original file.");
