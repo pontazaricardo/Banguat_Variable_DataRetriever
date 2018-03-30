@@ -17,6 +17,9 @@ namespace Banguat_DataClassifier
         static int initialYear = 2002;
         static int finalYear = 2017;
 
+        static bool ignoreTotalVariable = true;  //Generates "Total" variable (line 1)
+
+
         static void Main(string[] args)
         {
             using (var reader = new StreamReader(@"" + inputsFolder + countries[0] +"\\2002.txt"))
@@ -40,13 +43,52 @@ namespace Banguat_DataClassifier
             {
                 using (var reader = new StreamReader(@"" + inputsFolder + country + "\\"+ year + ".txt"))
                 {
+                    string[] headers = new string[] { "", "Importaciones", "Exportaciones",	"Importaciones", "Exportaciones", "Importaciones", "Exportaciones", "Importaciones", "Exportaciones",
+                                "Importaciones", "Exportaciones", "Importaciones", "Exportaciones", "Importaciones", "Exportaciones", "Importaciones", "Exportaciones", "Importaciones", "Exportaciones",
+                                "Importaciones", "Exportaciones", "Importaciones", "Exportaciones", "Importaciones", "Exportaciones", "Importaciones", "Exportaciones"};
+
+                    int counter = 0;
+
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
-                        List<string> values = line.Split('\t').ToList();
+                        string[] values = line.Split('\t').ToArray();
+
+                        if (counter == 0)
+                        {
+                            //header lines
+                            headers = values;
+                            counter++;
+
+                            continue;
+
+                        }
+
+                        string variableName = values[0];
+
+                        if ((variableName == "TOTAL"))
+                        {
+                            if (ignoreTotalVariable)
+                            {
+                                counter++;
+                                continue;
+                            }
+                        }
+
+                        if (!variables.ContainsKey(variableName))
+                        {
+                            //This is a new variable. Add it to the dictionary.
+                            Variable variablePivot = new Variable(variableName);
+                            variablePivot.FillData(year, values, headers);
+                        }
+                        else
+                        {
+                            //Find previous variable.
+                        }
 
 
 
+                        counter++;
                     }
                 }
             }
