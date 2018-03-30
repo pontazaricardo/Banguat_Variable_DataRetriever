@@ -19,7 +19,7 @@ namespace Banguat_DataClassifier
 
         static void Main(string[] args)
         {
-            using (var reader = new StreamReader(@""))
+            using (var reader = new StreamReader(@"" + inputsFolder + countries[0] +"\\2002.txt"))
             {
                 while (!reader.EndOfStream)
                 {
@@ -28,6 +28,26 @@ namespace Banguat_DataClassifier
 
 
 
+                }
+            }
+        }
+
+        public static void FillCountryData(string country)
+        {
+            Dictionary<string, Variable> variables = new Dictionary<string, Variable>();
+
+            for (int year= initialYear; year <= finalYear; year++)
+            {
+                using (var reader = new StreamReader(@"" + inputsFolder + country + "\\"+ year + ".txt"))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine();
+                        List<string> values = line.Split('\t').ToList();
+
+
+
+                    }
                 }
             }
         }
