@@ -80,14 +80,14 @@ namespace Banguat_DataClassifier
                             //This is a new variable. Add it to the dictionary.
                             Variable variablePivot = new Variable(variableName);
                             variablePivot.FillData(year, values, headers);
+
+                            variables.Add(variableName, variablePivot);
                         }
                         else
                         {
                             //Find previous variable.
+                            variables[variableName].FillData(year, values, headers);
                         }
-
-
-
                         counter++;
                     }
                 }
