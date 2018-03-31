@@ -22,17 +22,11 @@ namespace Banguat_DataClassifier
 
         static void Main(string[] args)
         {
-            using (var reader = new StreamReader(@"" + inputsFolder + countries[0] +"\\2002.txt"))
+            foreach(string country in countries)
             {
-                while (!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    List<string> values = line.Split('\t').ToList();
-
-
-
-                }
+                FillCountryData(country);
             }
+
         }
 
         public static void FillCountryData(string country)
