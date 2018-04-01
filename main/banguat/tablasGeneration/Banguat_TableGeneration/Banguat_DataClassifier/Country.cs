@@ -10,12 +10,11 @@ namespace Banguat_DataClassifier
     {
         public string name = "";
 
-        private List<Variable> variables { get; set; }
+        public Dictionary<string, Variable> variables = new Dictionary<string, Variable>();
 
         public Country(string name)
         {
             this.name = name;
-            this.variables = new List<Variable>();
         }
         
     }
