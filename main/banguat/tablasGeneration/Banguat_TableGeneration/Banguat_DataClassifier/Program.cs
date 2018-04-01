@@ -12,8 +12,9 @@ namespace Banguat_DataClassifier
     {
         static string inputsFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\inputs_txt\\";
 
+        static List<Country> countries = new List<Country>();
 
-        static List<string> countries = new List<string>() { "belgium", "canada", "costarica", "germany", "italy", "japan", "mexico", "south korea", "taiwan", "usa" };
+        //static List<string> countries = new List<string>() { "belgium", "canada", "costarica", "germany", "italy", "japan", "mexico", "south korea", "taiwan", "usa" };
         static int initialYear = 2002;
         static int finalYear = 2017;
 
@@ -22,9 +23,25 @@ namespace Banguat_DataClassifier
 
         static void Main(string[] args)
         {
-            foreach(string country in countries)
+
+            #region Create countries
+
+            countries.Add(new Country("belgium"));
+            countries.Add(new Country("canada"));
+            countries.Add(new Country("costarica"));
+            countries.Add(new Country("germany"));
+            countries.Add(new Country("italy"));
+            countries.Add(new Country("japan"));
+            countries.Add(new Country("mexico"));
+            countries.Add(new Country("south korea"));
+            countries.Add(new Country("taiwan"));
+            countries.Add(new Country("usa"));
+
+            #endregion
+
+            foreach (Country country in countries)
             {
-                FillCountryData(country);
+                FillCountryData(country.name);
             }
 
         }
