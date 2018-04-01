@@ -41,12 +41,12 @@ namespace Banguat_DataClassifier
 
             foreach (Country country in countries)
             {
-                FillCountryData(country.name);
+                country.variables = FillCountryData(country.name);
             }
 
         }
 
-        public static void FillCountryData(string country)
+        public static Dictionary<string, Variable> FillCountryData(string country)
         {
             Dictionary<string, Variable> variables = new Dictionary<string, Variable>();
 
@@ -103,6 +103,8 @@ namespace Banguat_DataClassifier
                     }
                 }
             }
+
+            return variables;
         }
         
     }
