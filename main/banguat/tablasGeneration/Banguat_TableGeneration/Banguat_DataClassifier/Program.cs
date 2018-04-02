@@ -14,7 +14,6 @@ namespace Banguat_DataClassifier
 
         static List<Country> countries = new List<Country>();
 
-        //static List<string> countries = new List<string>() { "belgium", "canada", "costarica", "germany", "italy", "japan", "mexico", "south korea", "taiwan", "usa" };
         static int initialYear = 2002;
         static int finalYear = 2017;
 
