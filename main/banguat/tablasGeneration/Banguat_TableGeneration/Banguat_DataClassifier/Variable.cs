@@ -82,5 +82,12 @@ namespace Banguat_DataClassifier
             return containsAllData;
         }
 
+        public string ReportMissingYears()
+        {
+            string result = "";
+
+            return result;
+        }
+
     }
 }
