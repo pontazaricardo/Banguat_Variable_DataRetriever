@@ -40,10 +40,23 @@ namespace Banguat_DataClassifier
 
         public static void SaveVariablesPerCountry(List<Country> countries, string outputFolder)
         {
+            Console.WriteLine("Printing all variables data!");
+
             foreach (Country country in countries)
             {
+                Console.WriteLine("\n-----------\n" + country.name + "\n-----------\n");
+
                 foreach (KeyValuePair<string, Variable> kvpair in country.variables)
                 {
+                    string variableName = kvpair.Key;
+                    Variable variable = kvpair.Value;
+
+                    Console.Write(variable + ": ");
+
+                    if (variable.ContainsAllData())
+                    {
+
+                    }
 
                 }
             }
