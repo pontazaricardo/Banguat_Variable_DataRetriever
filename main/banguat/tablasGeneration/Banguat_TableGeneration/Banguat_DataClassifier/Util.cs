@@ -11,8 +11,6 @@ namespace Banguat_DataClassifier
         public static Dictionary<string, int> positionsInArray = new Dictionary<string, int>() { { "2002", 0 }, { "2003", 1 }, { "2004", 2 }, { "2005", 3 }, { "2006", 4 },
             { "2007", 5 }, { "2008", 6 }, { "2009", 7 }, { "2010", 8 }, { "2011", 9 }, { "2012", 10 }, { "2013", 11 }, { "2014", 12 }, { "2015", 13 }, { "2016", 14 }, { "2017", 15 } };
 
-
-
         /// <summary>
         /// This function returns the correct position for a month based on the column in the raw data.
         /// Jan = 0: 3,4
@@ -38,6 +36,17 @@ namespace Banguat_DataClassifier
             result = monthNumber / 2;
             result = result - 2;
             return result;
+        }
+
+        public static void SaveVariablesPerCountry(List<Country> countries, string outputFolder)
+        {
+            foreach (Country country in countries)
+            {
+                foreach (KeyValuePair<string, Variable> kvpair in country.variables)
+                {
+
+                }
+            }
         }
 
     }
