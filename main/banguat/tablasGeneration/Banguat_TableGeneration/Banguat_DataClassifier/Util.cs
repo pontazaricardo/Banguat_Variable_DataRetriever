@@ -38,13 +38,20 @@ namespace Banguat_DataClassifier
             return result;
         }
 
-        public static void SaveVariablesPerCountry(List<Country> countries, string outputFolder)
+        public static void SaveVariablesPerCountry(List<Country> countries, string outputFolderRoot)
         {
             Console.WriteLine("Printing all variables data!");
 
             foreach (Country country in countries)
             {
                 Console.WriteLine("\n-----------\n" + country.name + "\n-----------\n");
+
+                string outputFolderImports = outputFolderRoot + "\\" + country.name + "\\imports";
+                string outputFolderExports = outputFolderRoot + "\\" + country.name + "\\exports";
+
+                System.IO.Directory.CreateDirectory(outputFolderImports);
+                System.IO.Directory.CreateDirectory(outputFolderExports);
+
 
                 foreach (KeyValuePair<string, Variable> kvpair in country.variables)
                 {
@@ -59,11 +66,33 @@ namespace Banguat_DataClassifier
                         continue;
                     }
 
-                    string toPrint = "";
-                    for(int row = 0; row < 16; row++)
-                    {
+                    string toPrintImports = "";
+                    string toPrintExports = "";
 
+                    for (int row = 0; row < 16; row++)
+                    {
+                        int year = 2002 + row;
+
+                        toPrintImports += year + " , ";
+                        toPrintExports += year + " , ";
+
+                        for (int column = 0; column < 11; column++)
+                        {
+                            toPrintImports += variable.imports[row, column] + " , ";
+                            toPrintExports += variable.exports[row, column] + " , ";
+                        }
+
+                        toPrintImports+= variable.imports[row, 11] + "\n";
+                        toPrintExports += variable.exports[row, 11] + "\n";
                     }
+
+                    string fileNameImports = outputFolderImports + "\\" + variableName + ".csv";
+                    string fileNameExports = outputFolderExports + "\\" + variableName + ".csv";
+
+                    System.IO.File.WriteAllText(fileNameImports, toPrintImports);
+                    System.IO.File.WriteAllText(fileNameExports, toPrintExports);
+
+                    Console.WriteLine("Done!");
                 }
             }
         }
