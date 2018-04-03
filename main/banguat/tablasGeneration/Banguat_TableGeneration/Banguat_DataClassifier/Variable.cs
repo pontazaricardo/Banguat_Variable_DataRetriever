@@ -82,9 +82,23 @@ namespace Banguat_DataClassifier
             return containsAllData;
         }
 
+        /// <summary>
+        /// Reports all the missing years for this variable.
+        /// </summary>
+        /// <returns></returns>
         public string ReportMissingYears()
         {
             string result = "";
+
+            for(int i = 0; i < 16; i++)
+            {
+                if (!yearFlags[i])
+                {
+                    //This is a missing year. Report
+                    int year = 2002 + i;
+                    result += year + " / ";
+                }
+            }
 
             return result;
         }
