@@ -55,9 +55,15 @@ namespace Banguat_DataClassifier
 
                     if (!variable.ContainsAllData())
                     {
-                        Console.WriteLine(" MISSING IN SOME YEARS");
+                        Console.WriteLine(" MISSING IN YEARS: "+variable.ReportMissingYears());
+                        continue;
                     }
 
+                    string toPrint = "";
+                    for(int row = 0; row < 16; row++)
+                    {
+
+                    }
                 }
             }
         }
