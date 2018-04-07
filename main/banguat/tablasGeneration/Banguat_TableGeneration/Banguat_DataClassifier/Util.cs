@@ -46,8 +46,8 @@ namespace Banguat_DataClassifier
             {
                 Console.WriteLine("\n-----------\n" + country.name + "\n-----------\n");
 
-                string outputFolderImports = outputFolderRoot + "\\" + country.name + "\\imports";
-                string outputFolderExports = outputFolderRoot + "\\" + country.name + "\\exports";
+                string outputFolderImports = outputFolderRoot +  country.name + "\\imports";
+                string outputFolderExports = outputFolderRoot +  country.name + "\\exports";
 
                 System.IO.Directory.CreateDirectory(outputFolderImports);
                 System.IO.Directory.CreateDirectory(outputFolderExports);
