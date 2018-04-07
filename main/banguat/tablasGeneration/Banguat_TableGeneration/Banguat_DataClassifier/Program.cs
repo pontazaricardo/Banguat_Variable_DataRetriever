@@ -11,6 +11,7 @@ namespace Banguat_DataClassifier
     class Program
     {
         static string inputsFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\inputs_txt\\";
+        static string outputsVariablesGroupedFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\outputs_tables\\";
 
         static List<Country> countries = new List<Country>();
 
@@ -42,6 +43,8 @@ namespace Banguat_DataClassifier
             {
                 country.variables = FillCountryData(country.name);
             }
+
+            Util.SaveVariablesPerCountry(countries, outputsVariablesGroupedFolder);
 
         }
 
