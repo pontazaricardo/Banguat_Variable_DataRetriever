@@ -46,8 +46,8 @@ namespace Banguat_DataClassifier
             {
                 Console.WriteLine("\n-----------\n" + country.name + "\n-----------\n");
 
-                string outputFolderImports = outputFolderRoot +  country.name + "\\imports";
-                string outputFolderExports = outputFolderRoot +  country.name + "\\exports";
+                string outputFolderImports = outputFolderRoot + country.name + "\\imports";
+                string outputFolderExports = outputFolderRoot + country.name + "\\exports";
 
                 System.IO.Directory.CreateDirectory(outputFolderImports);
                 System.IO.Directory.CreateDirectory(outputFolderExports);
@@ -62,7 +62,7 @@ namespace Banguat_DataClassifier
 
                     if (!variable.ContainsAllData())
                     {
-                        Console.WriteLine(" MISSING IN YEARS: "+variable.ReportMissingYears());
+                        Console.WriteLine(" MISSING IN YEARS: " + variable.ReportMissingYears());
                         continue;
                     }
 
@@ -82,12 +82,12 @@ namespace Banguat_DataClassifier
                             toPrintExports += variable.exports[row, column] + " , ";
                         }
 
-                        toPrintImports+= variable.imports[row, 11] + "\n";
+                        toPrintImports += variable.imports[row, 11] + "\n";
                         toPrintExports += variable.exports[row, 11] + "\n";
                     }
 
-                    string fileNameImports = outputFolderImports + "\\" + variableName + ".csv";
-                    string fileNameExports = outputFolderExports + "\\" + variableName + ".csv";
+                    string fileNameImports = outputFolderImports + "\\" + variableName.Replace("\"", "") + ".csv";
+                    string fileNameExports = outputFolderExports + "\\" + variableName.Replace("\"", "") + ".csv";
 
                     System.IO.File.WriteAllText(fileNameImports, toPrintImports);
                     System.IO.File.WriteAllText(fileNameExports, toPrintExports);
