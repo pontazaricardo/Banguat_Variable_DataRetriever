@@ -58,7 +58,7 @@ namespace Banguat_DataClassifier
                     string variableName = kvpair.Key;
                     Variable variable = kvpair.Value;
 
-                    Console.Write(variable + ": ");
+                    Console.Write(variableName + ": ");
 
                     if (!variable.ContainsAllData())
                     {
