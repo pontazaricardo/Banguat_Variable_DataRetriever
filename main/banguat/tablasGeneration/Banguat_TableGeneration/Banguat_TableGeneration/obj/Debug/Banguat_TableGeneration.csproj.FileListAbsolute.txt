@@ -7,5 +7,6 @@ C:\VisualStudioWorkspace\banguat\tablasGeneration\Banguat_TableGeneration\Bangua
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\bin\Debug\Banguat_TableGeneration.exe.config
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\bin\Debug\Banguat_TableGeneration.exe
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\bin\Debug\Banguat_TableGeneration.pdb
+C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\obj\Debug\Banguat_TableGeneration.csprojResolveAssemblyReference.cache
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\obj\Debug\Banguat_TableGeneration.exe
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_TableGeneration\obj\Debug\Banguat_TableGeneration.pdb
