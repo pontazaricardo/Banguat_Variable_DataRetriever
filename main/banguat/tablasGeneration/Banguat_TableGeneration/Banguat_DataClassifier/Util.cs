@@ -110,5 +110,95 @@ namespace Banguat_DataClassifier
             }
         }
 
+        public static void SaveMatlabVariables(List<Country> countries, string outputFolderRoot)
+        {
+            Console.WriteLine("Printing all variables data!");
+
+            foreach (Country country in countries)
+            {
+                Console.WriteLine("\n-----------\n" + country.name + "\n-----------\n");
+
+                string outputFolderImports = outputFolderRoot + country.name + "\\imports";
+                string outputFolderExports = outputFolderRoot + country.name + "\\exports";
+
+                System.IO.Directory.CreateDirectory(outputFolderImports);
+                System.IO.Directory.CreateDirectory(outputFolderExports);
+
+
+                foreach (KeyValuePair<string, Variable> kvpair in country.variables)
+                {
+                    string variableName = kvpair.Key;
+                    Variable variable = kvpair.Value;
+
+                    Console.Write(variableName + ": ");
+
+                    if (!variable.ContainsAllData())
+                    {
+                        Console.WriteLine(" MISSING IN YEARS: " + variable.ReportMissingYears());
+                        continue;
+                    }
+
+                    string toPrintImports = "";
+                    string toPrintExports = "";
+
+                    for (int row = 0; row < 16; row++)
+                    {
+                        for (int column = 0; column < 12; column++)
+                        {
+                            toPrintImports += variable.imports[row, column] + "\n";
+                            toPrintExports += variable.exports[row, column] + "\n";
+                        }
+                        
+                    }
+
+                    string fileNameImports = outputFolderImports + "\\" + matlabFileNameCorrection(variableName) + ".m";
+                    string fileNameExports = outputFolderExports + "\\" + matlabFileNameCorrection(variableName) + ".m";
+
+                    System.IO.File.WriteAllText(fileNameImports, toPrintImports);
+                    System.IO.File.WriteAllText(fileNameExports, toPrintExports);
+
+                    Console.WriteLine("Done!");
+                }
+            }
+        }
+
+        private static string matlabFileNameCorrection(string str)
+        {
+            str = str.Replace("\"", "");
+
+            str = UppercaseWords(str);
+
+            str = str.Replace(" ", "");
+
+            return str;
+        }
+
+        private static string UppercaseWords(string value)
+        {
+            char[] array = value.ToCharArray();
+            // Handle the first letter in the string.
+            if (array.Length >= 1)
+            {
+                if (char.IsLower(array[0]))
+                {
+                    array[0] = char.ToUpper(array[0]);
+                }
+            }
+            // Scan through the letters, checking for spaces.
+            // ... Uppercase the lowercase letters following spaces.
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i - 1] == ' ')
+                {
+                    if (char.IsLower(array[i]))
+                    {
+                        array[i] = char.ToUpper(array[i]);
+                    }
+                }
+            }
+            return new string(array);
+        }
+
+
     }
 }
