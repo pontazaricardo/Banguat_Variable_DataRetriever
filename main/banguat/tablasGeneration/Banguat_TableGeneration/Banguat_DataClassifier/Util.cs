@@ -112,7 +112,7 @@ namespace Banguat_DataClassifier
 
         public static void SaveMatlabVariables(List<Country> countries, string outputFolderRoot)
         {
-            Console.WriteLine("Printing all variables data!");
+            Console.WriteLine("Printing all matlab variables data!");
 
             foreach (Country country in countries)
             {
