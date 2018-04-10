@@ -12,6 +12,7 @@ namespace Banguat_DataClassifier
     {
         static string inputsFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\inputs_txt\\";
         static string outputsVariablesGroupedFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\outputs_tables\\";
+        static string outputsVariablesMatlabFolder = "C:\\Users\\liwuen\\Documents\\GitHub\\Banguat_Variable_DataRetriever\\main\\banguat\\data\\outputs_matlab\\";
 
         static List<Country> countries = new List<Country>();
 
@@ -45,6 +46,8 @@ namespace Banguat_DataClassifier
             }
 
             Util.SaveVariablesPerCountry(countries, outputsVariablesGroupedFolder);
+
+            Util.SaveMatlabVariables(countries, outputsVariablesMatlabFolder);
 
         }
 
