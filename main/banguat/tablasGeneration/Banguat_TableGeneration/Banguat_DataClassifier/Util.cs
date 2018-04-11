@@ -145,8 +145,18 @@ namespace Banguat_DataClassifier
                     {
                         for (int column = 0; column < 12; column++)
                         {
-                            toPrintImports += variable.imports[row, column] + "\n";
-                            toPrintExports += variable.exports[row, column] + "\n";
+                            if((row==15) && (column == 11))
+                            {
+                                toPrintImports += variable.imports[row, column];
+                                toPrintExports += variable.exports[row, column];
+                            }
+                            else
+                            {
+                                toPrintImports += variable.imports[row, column] + "\n";
+                                toPrintExports += variable.exports[row, column] + "\n";
+                            }
+
+                            
                         }
                         
                     }
