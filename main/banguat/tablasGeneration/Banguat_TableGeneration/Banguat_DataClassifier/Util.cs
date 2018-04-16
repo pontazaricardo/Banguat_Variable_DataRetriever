@@ -209,6 +209,13 @@ namespace Banguat_DataClassifier
             return new string(array);
         }
 
+        public bool EuclideanFilter(Variable variable)
+        {
+            if (!variable.ContainsAllData())
+                return false;
+
+            return true;
+        }
 
     }
 }
