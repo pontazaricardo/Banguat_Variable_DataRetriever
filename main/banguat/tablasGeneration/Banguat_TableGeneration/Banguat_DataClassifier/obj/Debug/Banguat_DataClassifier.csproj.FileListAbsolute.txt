@@ -1,5 +1,6 @@
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_DataClassifier\bin\Debug\Banguat_DataClassifier.exe.config
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_DataClassifier\bin\Debug\Banguat_DataClassifier.exe
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_DataClassifier\bin\Debug\Banguat_DataClassifier.pdb
+C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_DataClassifier\obj\Debug\Banguat_DataClassifier.csprojResolveAssemblyReference.cache
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_DataClassifier\obj\Debug\Banguat_DataClassifier.exe
 C:\Users\liwuen\Documents\GitHub\Banguat_Variable_DataRetriever\main\banguat\tablasGeneration\Banguat_TableGeneration\Banguat_DataClassifier\obj\Debug\Banguat_DataClassifier.pdb
