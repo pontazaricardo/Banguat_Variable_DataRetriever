@@ -209,12 +209,18 @@ namespace Banguat_DataClassifier
             return new string(array);
         }
 
-        public bool EuclideanFilter(Variable variable)
+        public Tuple<bool,bool> EuclideanFilterChecker(Variable variable)
         {
-            if (!variable.ContainsAllData())
-                return false;
+            bool importsHaveSubstantialData = false;
+            bool exportHaveSubstantialData = false;
 
-            return true;
+            if (!variable.ContainsAllData())
+                return new Tuple<bool, bool>(importsHaveSubstantialData,exportHaveSubstantialData);
+
+
+
+
+            return new Tuple<bool, bool>(importsHaveSubstantialData, exportHaveSubstantialData);
         }
 
     }
